@@ -3,13 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
+    compileSdk 31
 
     defaultConfig {
-        applicationId "com.goldilion.samplemultiads"
-        minSdkVersion 19
-        targetSdkVersion 31
+        applicationId "com.goldilion.myapplication"
+        minSdk 21
+        targetSdk 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -29,13 +28,11 @@ android {
 }
 
 dependencies {
-    implementation project(':FamilyMultiAds')
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation "androidx.multidex:multidex:2.0.1"
-
+    implementation project(':MultiAdsV2')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.work:work-runtime:2.7.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-ads:21.2.0'
 }
