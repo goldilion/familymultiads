@@ -14,7 +14,6 @@ import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 import com.ironsource.mediationsdk.IronSource;
 import com.smaato.sdk.core.SmaatoSdk;
-import com.startapp.sdk.adsbase.StartAppSDK;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -68,12 +67,6 @@ public class AndroAdsGDPR {
                         });
 
 
-                break;
-            case "STARTAPP":
-                StartAppSDK.setUserConsent(activity,
-                        "pas",
-                        System.currentTimeMillis(),
-                        true);
                 break;
             case "IRON":
                 IronSource.setConsent(true);
