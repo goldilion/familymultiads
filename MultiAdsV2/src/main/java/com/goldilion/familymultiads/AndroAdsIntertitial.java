@@ -62,7 +62,7 @@ import com.ironsource.mediationsdk.sdk.InterstitialListener;
 //import com.startapp.sdk.adsbase.adlisteners.AdDisplayListener;
 //import com.startapp.sdk.adsbase.adlisteners.AdEventListener;
 
-public class goldilionIntertitial {
+public class AndroAdsIntertitial {
     public static InterstitialAd mInterstitialAd;
     public static AdManagerInterstitialAd mAdManagerInterstitialAd;
     public static MaxInterstitialAd interstitialAd;

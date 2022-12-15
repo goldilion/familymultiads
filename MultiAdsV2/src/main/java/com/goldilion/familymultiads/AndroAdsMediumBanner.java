@@ -48,7 +48,7 @@ import com.ironsource.mediationsdk.logger.IronSourceError;
 //import com.startapp.sdk.ads.banner.BannerListener;
 //import com.startapp.sdk.ads.banner.Mrec;
 
-public class goldilionMediumBanner {
+public class AndroAdsMediumBanner {
     public static MaxAdView adViewMax;
     public static AdView adViewAdmob;
     public static AdManagerAdView bannerGoogleAds;

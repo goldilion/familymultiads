@@ -22,7 +22,7 @@ import com.smaato.sdk.core.SmaatoSdk;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class AlienGDPR {
+public class AndroAdsGDPR {
     public static ConsentInformation consentInformation;
     public static ConsentDebugSettings debugSettings;
     public static ConsentRequestParameters params;
