@@ -6,6 +6,8 @@ import android.provider.Settings;
 import androidx.annotation.Nullable;
 
 import com.applovin.sdk.AppLovinPrivacySettings;
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
 import com.google.android.ump.ConsentDebugSettings;
 import com.google.android.ump.ConsentForm;
 import com.google.android.ump.ConsentInformation;
@@ -13,12 +15,14 @@ import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 import com.ironsource.mediationsdk.IronSource;
+import com.smaato.sdk.core.Gender;
 import com.smaato.sdk.core.SmaatoSdk;
+//import com.startapp.sdk.adsbase.StartAppSDK;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class AndroAdsGDPR {
+public class AlienGDPR {
     public static ConsentInformation consentInformation;
     public static ConsentDebugSettings debugSettings;
     public static ConsentRequestParameters params;
@@ -68,6 +72,12 @@ public class AndroAdsGDPR {
 
 
                 break;
+//            case "STARTAPP":
+//                StartAppSDK.setUserConsent(activity,
+//                        "pas",
+//                        System.currentTimeMillis(),
+//                        true);
+//                break;
             case "IRON":
                 IronSource.setConsent(true);
                 IronSource.setMetaData("do_not_sell", "false");
@@ -95,7 +105,6 @@ public class AndroAdsGDPR {
                     }
                 } );
                 AppLovinPrivacySettings.setHasUserConsent( true, activity );
-
                  */
                 AppLovinPrivacySettings.setIsAgeRestrictedUser( childDirected, activity );
                 break;

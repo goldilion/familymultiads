@@ -1,46 +1,58 @@
 package com.goldilion.sdkads.config;
 
-
 import android.util.Base64;
-
+import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 public class QWERTY {
-    public static String SECRET_KEY = "aesEncryptionKey";
-    public static  String INIT_VECTOR = "encryptionIntVec";
+    private static final String ALGORITHM = "AES";
+    private static final byte[] SALT = "tHeApAcHe6410111".getBytes();// THE KEY MUST BE SAME
+    public static String ALEXA;
+    static Key getSalt() {
+        return new SecretKeySpec(SALT, ALGORITHM);
+    }
 
-    public static String ABC(String value) {
+    public static String ZXC(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        Key salt = getSalt();
         try {
-            IvParameterSpec iv = new IvParameterSpec(INIT_VECTOR.getBytes("UTF-8"));
-            SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes("UTF-8"), "AES");
-
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
-
-            byte[] encrypted = cipher.doFinal(value.getBytes());
-            return Base64.encodeToString(encrypted, Base64.DEFAULT);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, salt);
+            byte[] decodedValue = Base64.decode(value, Base64.DEFAULT);
+            byte[] decValue = cipher.doFinal(decodedValue);
+            return new String(decValue);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }
 
-    public static String ZXC(String value) {
+    public static String ONE(String value) {
         try {
-            IvParameterSpec iv = new IvParameterSpec(INIT_VECTOR.getBytes("UTF-8"));
-            SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes("UTF-8"), "AES");
-
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
-            byte[] original = cipher.doFinal(Base64.decode(value, Base64.DEFAULT));
-
-            return new String(original);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            String result = value.replace("dk3f9U34JRCZOyiUo2gTYg=="," ");
+            String arr[] = result.split(" ", 2);
+            String ALEXA = arr[0];
+            return new String(ALEXA);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
+    }
 
+    public static String TWO(String value) {
+        try {
+            String result = value.replace("dk3f9U34JRCZOyiUo2gTYg=="," ");
+            String arr[] = result.split(" ", 2);
+            String ALEXA = arr[1];
+            return new String(ALEXA);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

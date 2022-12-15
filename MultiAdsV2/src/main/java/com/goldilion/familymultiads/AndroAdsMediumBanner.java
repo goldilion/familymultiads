@@ -33,8 +33,6 @@ import com.applovin.sdk.AppLovinAdSize;
 import com.applovin.sdk.AppLovinSdkUtils;
 //import com.facebook.ads.Ad;
 //import com.facebook.ads.AdError;
-//import com.google.ads.mediation.facebook.FacebookAdapter;
-//import com.google.ads.mediation.facebook.FacebookExtras;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -46,13 +44,18 @@ import com.ironsource.mediationsdk.ISBannerSize;
 import com.ironsource.mediationsdk.IronSource;
 import com.ironsource.mediationsdk.IronSourceBannerLayout;
 import com.ironsource.mediationsdk.logger.IronSourceError;
+//import com.startapp.sdk.ads.banner.Banner;
+//import com.startapp.sdk.ads.banner.BannerListener;
+//import com.startapp.sdk.ads.banner.Mrec;
 
-public class AndroAdsMediumBanner {
+public class goldilionMediumBanner {
     public static MaxAdView adViewMax;
     public static AdView adViewAdmob;
     public static AdManagerAdView bannerGoogleAds;
     public static AppLovinAdView adViewDiscovery;
     public static IronSourceBannerLayout adViewIron;
+//    public static Banner startAppBanner;
+//    public static Mrec startAppMrec;
 //    public static com.facebook.ads.AdView adViewFAN;
 
     public static OnLoadBannerAdmob onLoadBannerAdmob;
@@ -68,12 +71,8 @@ public class AndroAdsMediumBanner {
     public static void MediumBannerAdmob(Activity activity, RelativeLayout layAds, String selectAdsBackup, String idBanner, String idBannerBackup, String Hpk1,
                                          String Hpk2, String Hpk3, String Hpk4, String Hpk5) {
 
-//        Bundle extras = new FacebookExtras()
-//                .setNativeBanner(true)
-//                .build();
         AdRequest request = new AdRequest.Builder().addKeyword(Hpk1).addKeyword(Hpk2)
                 .addKeyword(Hpk3).addKeyword(Hpk4).addKeyword(Hpk5)
-//                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                 .build();
         adViewAdmob = new AdView(activity);
         adViewAdmob.setAdUnitId(idBanner);
@@ -101,6 +100,11 @@ public class AndroAdsMediumBanner {
                             adViewIron.isDestroyed();
                         }
                         break;
+//                    case "STARTAPP":
+//                        if (startAppBanner != null) {
+//                            startAppBanner.hideBanner();
+//                        }
+//                        break;
                     case "APPLOVIN-D":
                         if (adViewDiscovery != null) {
                             adViewDiscovery.destroy();
@@ -140,6 +144,15 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewIron, 0, layoutParams);
                         IronSource.loadBanner(adViewIron, idBannerBackup);
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "APPLOVIN-D":
                         AdRequest.Builder builder = new AdRequest.Builder().addKeyword(Hpk1).addKeyword(Hpk2)
                                 .addKeyword(Hpk3).addKeyword(Hpk4).addKeyword(Hpk5);
@@ -222,6 +235,11 @@ public class AndroAdsMediumBanner {
                             adViewIron.isDestroyed();
                         }
                         break;
+//                    case "STARTAPP":
+//                        if (startAppBanner != null) {
+//                            startAppBanner.hideBanner();
+//                        }
+//                        break;
                     case "APPLOVIN-D":
                         if (adViewDiscovery != null) {
                             adViewDiscovery.destroy();
@@ -262,6 +280,15 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewIron, 0, layoutParams);
                         IronSource.loadBanner(adViewIron, idBannerBackup);
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "APPLOVIN-D":
                         AdRequest.Builder builder = new AdRequest.Builder();
                         Bundle bannerExtras = new Bundle();
@@ -353,11 +380,8 @@ public class AndroAdsMediumBanner {
 //                        layAds.addView(startAppMrec, bannerParameters);
 //                        break;
 //                    case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+//
 //                        AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
 //                                .build();
 //                        adViewAdmob = new AdView(activity);
 //                        adViewAdmob.setAdUnitId(idBannerBackup);
@@ -486,6 +510,11 @@ public class AndroAdsMediumBanner {
                             adViewIron.isDestroyed();
                         }
                         break;
+//                    case "STARTAPP":
+//                        if (startAppBanner != null) {
+//                            startAppBanner.hideBanner();
+//                        }
+//                        break;
                     case "ADMOB":
                         if (adViewAdmob != null) {
                             adViewAdmob.destroy();
@@ -531,12 +560,18 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewIron, 0, layoutParams);
                         IronSource.loadBanner(adViewIron, idBannerBackup);
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+
                         AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                                 .build();
                         adViewAdmob = new AdView(activity);
                         adViewAdmob.setAdUnitId(idBannerBackup);
@@ -604,6 +639,11 @@ public class AndroAdsMediumBanner {
                             adViewIron.isDestroyed();
                         }
                         break;
+//                    case "STARTAPP":
+//                        if (startAppBanner != null) {
+//                            startAppBanner.hideBanner();
+//                        }
+//                        break;
                     case "ADMOB":
                         if (adViewAdmob != null) {
                             adViewAdmob.destroy();
@@ -648,12 +688,18 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewIron, 0, layoutParams);
                         IronSource.loadBanner(adViewIron, idBannerBackup);
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+
                         AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                                 .build();
                         adViewAdmob = new AdView(activity);
                         adViewAdmob.setAdUnitId(idBannerBackup);
@@ -731,6 +777,11 @@ public class AndroAdsMediumBanner {
                             adViewIron.isDestroyed();
                         }
                         break;
+//                    case "STARTAPP":
+//                        if (startAppBanner != null) {
+//                            startAppBanner.hideBanner();
+//                        }
+//                        break;
                     case "ADMOB":
                         if (adViewAdmob != null) {
                             adViewAdmob.destroy();
@@ -796,12 +847,18 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewIron, 0, layoutParams);
                         IronSource.loadBanner(adViewIron, idBannerBackup);
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+
                         AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                                 .build();
                         adViewAdmob = new AdView(activity);
                         adViewAdmob.setAdUnitId(idBannerBackup);
@@ -857,6 +914,144 @@ public class AndroAdsMediumBanner {
 
     }
 
+//    public static void MediumBannerStartApp(Activity activity, RelativeLayout layAds, String selectAdsBackup, String idBanner, String idBannerBackup) {
+//        startAppMrec = new Mrec(activity, new BannerListener() {
+//            @Override
+//            public void onReceiveAd(View view) {
+//                if (onLoadBannerStartApp!=null){
+//                    onLoadBannerStartApp.onReceiveAd();
+//                }
+//                switch (selectAdsBackup) {
+//                    case "APPLOVIN-D":
+//                        if (adViewDiscovery != null) {
+//                            adViewDiscovery.destroy();
+//                        }
+//                        break;
+//                    case "APPLOVIN-M":
+//                        if (adViewMax != null) {
+//                            adViewMax.destroy();
+//                        }
+//                        break;
+//                    case "IRON":
+//                        if (adViewIron != null) {
+//                            adViewIron.isDestroyed();
+//                        }
+//                        break;
+//                    case "MOPUB":
+//                    case "UNITY":
+//
+//                        break;
+//                    case "ADMOB":
+//                        if (adViewAdmob != null) {
+//                            adViewAdmob.destroy();
+//                        }
+//                        break;
+//                    case "GOOGLE-ADS":
+//                        if (bannerGoogleAds != null) {
+//                            bannerGoogleAds.destroy();
+//                        }
+//                        break;
+//                    case "FACEBOOK":
+//                        if (adViewFAN != null) {
+//                            adViewFAN.destroy();
+//                        }
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onFailedToReceiveAd(View view) {
+//                if (onLoadBannerStartApp!=null){
+//                    onLoadBannerStartApp.onFailedToReceiveAd("");
+//                }
+//                switch (selectAdsBackup) {
+//                    case "APPLOVIN-D":
+//                        AdRequest.Builder builder = new AdRequest.Builder();
+//                        Bundle bannerExtras = new Bundle();
+//                        bannerExtras.putString("zone_id", idBannerBackup);
+//                        builder.addCustomEventExtrasBundle(AppLovinCustomEventBanner.class, bannerExtras);
+//                        adViewDiscovery = new AppLovinAdView(AppLovinAdSize.MREC, activity);
+//                        layAds.addView(adViewDiscovery);
+//                        adViewDiscovery.loadNextAd();
+//                        break;
+//                    case "APPLOVIN-M":
+//                        adViewMax = new MaxAdView(idBannerBackup, MaxAdFormat.MREC, activity);
+//                        adViewMax.stopAutoRefresh();
+//                        final int widthPx = AppLovinSdkUtils.dpToPx(activity, 300);
+//                        final int heightPx = AppLovinSdkUtils.dpToPx(activity, 250);
+//                        adViewMax.setLayoutParams(new ConstraintLayout.LayoutParams(widthPx, heightPx));
+//                        layAds.addView(adViewMax);
+//                        adViewMax.loadAd();
+//                        break;
+//                    case "IRON":
+//                        adViewIron = IronSource.createBanner(activity, ISBannerSize.RECTANGLE);
+//                        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+//                                FrameLayout.LayoutParams.WRAP_CONTENT);
+//                        layAds.addView(adViewIron, 0, layoutParams);
+//                        IronSource.loadBanner(adViewIron, idBannerBackup);
+//                        break;
+//                    case "MOPUB":
+//                    case "UNITY":
+//
+//                        break;
+//                    case "ADMOB":
+//
+//                        AdRequest request = new AdRequest.Builder()
+//                                .build();
+//                        adViewAdmob = new AdView(activity);
+//                        adViewAdmob.setAdUnitId(idBannerBackup);
+//                        layAds.addView(adViewAdmob);
+//                        adViewAdmob.setAdSize(AdSize.MEDIUM_RECTANGLE);
+//                        adViewAdmob.loadAd(request);
+//                        break;
+//                    case "GOOGLE-ADS":
+//                        AdManagerAdRequest adRequest =
+//                                new AdManagerAdRequest.Builder()
+//                                        .build();
+//
+//                        bannerGoogleAds = new AdManagerAdView(activity);
+//                        bannerGoogleAds.setAdUnitId(idBannerBackup);
+//                        layAds.addView(bannerGoogleAds);
+//                        bannerGoogleAds.setAdSize(AdSize.MEDIUM_RECTANGLE);
+//                        bannerGoogleAds.loadAd(adRequest);
+//                        break;
+//                    case "FACEBOOK":
+//                        adViewFAN = new com.facebook.ads.AdView(activity, idBannerBackup,
+//                                com.facebook.ads.AdSize.RECTANGLE_HEIGHT_250);
+//                        layAds.addView(adViewFAN);
+//                        adViewFAN.loadAd();
+//                        break;
+//                    case "ALIEN-V":
+//                        AlienViewAds.Banner(activity,layAds,idBannerBackup);
+//                        break;
+//                    case "ALIEN-M":
+//                        AlienMediationAds.MediumBanner(activity,layAds,idBannerBackup);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onImpression(View view) {
+//                if (onLoadBannerStartApp!=null){
+//                    onLoadBannerStartApp.onImpression();
+//                }
+//            }
+//
+//            @Override
+//            public void onClick(View view) {
+//                if (onLoadBannerStartApp!=null){
+//                    onLoadBannerStartApp.onClick();
+//                }
+//            }
+//        });
+//        RelativeLayout.LayoutParams bannerParameters =
+//                new RelativeLayout.LayoutParams(
+//                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//        layAds.addView(startAppMrec, bannerParameters);
+//    }
+
     public static void MediumBannerIron(Activity activity, RelativeLayout layAds, String selectAdsBackup, String idBanner, String idBannerBackup) {
         adViewIron = IronSource.createBanner(activity, ISBannerSize.RECTANGLE);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
@@ -879,6 +1074,9 @@ public class AndroAdsMediumBanner {
                             adViewMax.destroy();
                         }
                         break;
+//                    case "STARTAPP":
+//                        startAppBanner.hideBanner();
+//                        break;
                     case "MOPUB":
                     case "UNITY":
 
@@ -925,16 +1123,22 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewMax);
                         adViewMax.loadAd();
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "MOPUB":
                     case "UNITY":
 
                         break;
                     case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+
                         AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                                 .build();
                         adViewAdmob = new AdView(activity);
                         adViewAdmob.setAdUnitId(idBannerBackup);
@@ -1020,6 +1224,9 @@ public class AndroAdsMediumBanner {
                             adViewMax.destroy();
                         }
                         break;
+//                    case "STARTAPP":
+//                        startAppBanner.hideBanner();
+//                        break;
                     case "MOPUB":
                     case "UNITY":
 
@@ -1073,16 +1280,22 @@ public class AndroAdsMediumBanner {
                         layAds.addView(adViewMax);
                         adViewMax.loadAd();
                         break;
+//                    case "STARTAPP":
+//                        startAppMrec = new Mrec(activity);
+//                        RelativeLayout.LayoutParams bannerParameters =
+//                                new RelativeLayout.LayoutParams(
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                        bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//                        layAds.addView(startAppMrec, bannerParameters);
+//                        break;
                     case "MOPUB":
                     case "UNITY":
 
                         break;
                     case "ADMOB":
-//                        Bundle extras = new FacebookExtras()
-//                                .setNativeBanner(true)
-//                                .build();
+
                         AdRequest request = new AdRequest.Builder()
-//                                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                                 .build();
                         adViewAdmob = new AdView(activity);
                         adViewAdmob.setAdUnitId(idBannerBackup);

@@ -2,6 +2,7 @@ package com.goldilion.sdkads.type.mediation;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import com.smaato.sdk.interstitial.InterstitialAd;
 import com.smaato.sdk.interstitial.InterstitialError;
 import com.smaato.sdk.interstitial.InterstitialRequestError;
 import com.smaato.sdk.nativead.NativeAd;
+import com.smaato.sdk.nativead.NativeAdAssets;
 import com.smaato.sdk.nativead.NativeAdError;
 import com.smaato.sdk.nativead.NativeAdRenderer;
 import com.smaato.sdk.nativead.NativeAdRequest;
@@ -380,22 +382,22 @@ public class AlienMediationAds {
         NativeAd.Listener listener = new NativeAd.Listener() {
             @Override
             public void onAdLoaded(@NonNull NativeAd nativeAd, @NonNull NativeAdRenderer nativeAdRenderer) {
-               try {
-                   View adView = (View) activity.getLayoutInflater()
-                           .inflate(R.layout.alien_small_native, null);
-                   NativeAdView nativeAdView = new NativeMediation(adView) ;
-                   nativeAdRenderer.renderInView(nativeAdView);
-                   nativeAdRenderer.registerForImpression(adView);
-                   nativeAdRenderer.registerForClicks(nativeAdView.ctaView());
-                   content.addView(adView);
+                try {
+                    View adView = (View) activity.getLayoutInflater()
+                            .inflate(R.layout.alien_small_native, null);
+                    NativeAdView nativeAdView = new NativeMediation(adView) ;
+                    nativeAdRenderer.renderInView(nativeAdView);
+                    nativeAdRenderer.registerForImpression(adView);
+                    nativeAdRenderer.registerForClicks(nativeAdView.ctaView());
+                    content.addView(adView);
 
-                   if (onLoadNative !=null){
-                       onLoadNative.onNativeAdLoaded();
-                   }
+                    if (onLoadNative !=null){
+                        onLoadNative.onNativeAdLoaded();
+                    }
 
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
 
@@ -433,21 +435,21 @@ public class AlienMediationAds {
         NativeAd.Listener listener = new NativeAd.Listener() {
             @Override
             public void onAdLoaded(@NonNull NativeAd nativeAd, @NonNull NativeAdRenderer nativeAdRenderer) {
-               try {
-                   View adView = (View) activity.getLayoutInflater()
-                           .inflate(R.layout.alien_big_native, null);
-                   NativeAdView nativeAdView = new NativeMediation(adView) ;
-                   nativeAdRenderer.renderInView(nativeAdView);
-                   nativeAdRenderer.registerForImpression(adView);
-                   nativeAdRenderer.registerForClicks(nativeAdView.ctaView());
-                   content.addView(adView);
+                try {
+                    View adView = (View) activity.getLayoutInflater()
+                            .inflate(R.layout.alien_big_native, null);
+                    NativeAdView nativeAdView = new NativeMediation(adView) ;
+                    nativeAdRenderer.renderInView(nativeAdView);
+                    nativeAdRenderer.registerForImpression(adView);
+                    nativeAdRenderer.registerForClicks(nativeAdView.ctaView());
+                    content.addView(adView);
 
-                   if (onLoadNative !=null){
-                       onLoadNative.onNativeAdLoaded();
-                   }
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
+                    if (onLoadNative !=null){
+                        onLoadNative.onNativeAdLoaded();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
             }

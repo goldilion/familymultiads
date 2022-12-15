@@ -4,6 +4,7 @@ import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -45,8 +46,6 @@ import com.applovin.sdk.AppLovinAdSize;
 import com.applovin.sdk.AppLovinSdk;
 //import com.facebook.ads.AdError;
 //import com.facebook.ads.InterstitialAdListener;
-//import com.google.ads.mediation.facebook.FacebookAdapter;
-//import com.google.ads.mediation.facebook.FacebookExtras;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
@@ -58,8 +57,12 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.ironsource.mediationsdk.IronSource;
 import com.ironsource.mediationsdk.logger.IronSourceError;
 import com.ironsource.mediationsdk.sdk.InterstitialListener;
+//import com.startapp.sdk.adsbase.Ad;
+//import com.startapp.sdk.adsbase.StartAppAd;
+//import com.startapp.sdk.adsbase.adlisteners.AdDisplayListener;
+//import com.startapp.sdk.adsbase.adlisteners.AdEventListener;
 
-public class AndroAdsIntertitial {
+public class goldilionIntertitial {
     public static InterstitialAd mInterstitialAd;
     public static AdManagerInterstitialAd mAdManagerInterstitialAd;
     public static MaxInterstitialAd interstitialAd;
@@ -68,6 +71,7 @@ public class AndroAdsIntertitial {
     public static AppLovinInterstitialAdDialog interstitialAdlovin;
     public static AppLovinAd loadedAd;
     public static boolean irininter = false;
+//    private static StartAppAd startAppAd;
     public static boolean SHOW_ALIEN_VIEW=false;
     public static OnLoadInterstitialAdmob onLoadInterstitialAdmob;
     public static OnShowInterstitialAdmob onShowInterstitialAdmob;
@@ -105,12 +109,8 @@ public class AndroAdsIntertitial {
 
     public static void LoadIntertitialAdmob(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup, String Hpk1,
                                             String Hpk2, String Hpk3, String Hpk4, String Hpk5) {
-//        Bundle extras = new FacebookExtras()
-//                .setNativeBanner(true)
-//                .build();
         AdRequest request = new AdRequest.Builder().addKeyword(Hpk1).addKeyword(Hpk2)
                 .addKeyword(Hpk3).addKeyword(Hpk4).addKeyword(Hpk5)
-//                .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                 .build();
 
         InterstitialAd.load(activity,idIntertitial, request,
@@ -429,11 +429,7 @@ public class AndroAdsIntertitial {
 //                interstitialAdlovin = AppLovinInterstitialAd.create(AppLovinSdk.getInstance(activity), activity);
 //                break;
 //            case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
 //                AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
 //                        .build();
 //                InterstitialAd.load(activity, idIntertitialBackup, request,
 //                        new InterstitialAdLoadCallback() {
@@ -553,11 +549,7 @@ public class AndroAdsIntertitial {
                 IronSource.loadInterstitial();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -681,11 +673,7 @@ public class AndroAdsIntertitial {
                 IronSource.loadInterstitial();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -810,11 +798,9 @@ public class AndroAdsIntertitial {
                 IronSource.loadInterstitial();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
+
+
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -986,11 +972,7 @@ public class AndroAdsIntertitial {
                 interstitialAd.loadAd();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -1080,6 +1062,138 @@ public class AndroAdsIntertitial {
     public static void LoadIntertitialMopub(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
     }
 
+//    public static void LoadIntertitialStartApp(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
+//        startAppAd = new StartAppAd(activity);
+//        startAppAd.loadAd(new AdEventListener() {
+//            @Override
+//            public void onReceiveAd(Ad ad) {
+//                if (onLoadInterstitialStartApp != null) {
+//                    onLoadInterstitialStartApp.onReceiveAd();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailedToReceiveAd(Ad ad) {
+//                if (onLoadInterstitialStartApp != null) {
+//                    onLoadInterstitialStartApp.onFailedToReceiveAd("");
+//                }
+//            }
+//        });
+//        switch (selectAdsBackup) {
+//            case "APPLOVIN-D":
+//                AdRequest.Builder builder = new AdRequest.Builder();
+//                Bundle interstitialExtras = new Bundle();
+//                interstitialExtras.putString("zone_id", idIntertitialBackup);
+//                builder.addCustomEventExtrasBundle(AppLovinCustomEventInterstitial.class, interstitialExtras);
+//                AppLovinSdk.getInstance(activity).getAdService().loadNextAd(AppLovinAdSize.INTERSTITIAL, new AppLovinAdLoadListener() {
+//                    @Override
+//                    public void adReceived(AppLovinAd ad) {
+//                        loadedAd = ad;
+//                    }
+//
+//                    @Override
+//                    public void failedToReceiveAd(int errorCode) {
+//                        // Look at AppLovinErrorCodes.java for list of error codes.
+//                    }
+//                });
+//                interstitialAdlovin = AppLovinInterstitialAd.create(AppLovinSdk.getInstance(activity), activity);
+//                break;
+//            case "IRON":
+//                IronSource.isInterstitialPlacementCapped(idIntertitialBackup);
+//                IronSource.loadInterstitial();
+//                break;
+//            case "APPLOVIN-M":
+//                interstitialAd = new MaxInterstitialAd(idIntertitialBackup, activity);
+//                interstitialAd.loadAd();
+//                break;
+//            case "ADMOB":
+//
+//
+//                AdRequest request = new AdRequest.Builder()
+//                        .build();
+//                InterstitialAd.load(activity, idIntertitialBackup, request,
+//                        new InterstitialAdLoadCallback() {
+//                            @Override
+//                            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+//                                mInterstitialAd = interstitialAd;
+//                                Log.i(TAG, "onAdLoaded");
+//                            }
+//
+//                            @Override
+//                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+//                                Log.i(TAG, loadAdError.getMessage());
+//                                mInterstitialAd = null;
+//                            }
+//                        });
+//                break;
+//            case "MOPUB":
+//            case "UNITY":
+//
+//                break;
+//            case "FACEBOOK":
+//                FBinterstitialAd = new com.facebook.ads.InterstitialAd(activity, idIntertitialBackup);
+//                FBinterstitialAd.loadAd();
+//                break;
+//            case "GOOGLE-ADS":
+//                AdManagerAdRequest adRequest =
+//                        new AdManagerAdRequest.Builder()
+//                                .build();
+//
+//                AdManagerInterstitialAd.load(activity, idIntertitialBackup, adRequest,
+//                        new AdManagerInterstitialAdLoadCallback() {
+//                            @Override
+//                            public void onAdLoaded(@NonNull AdManagerInterstitialAd interstitialAd) {
+//                                mAdManagerInterstitialAd = interstitialAd;
+//                                Log.i(TAG, "onAdLoaded");
+//                            }
+//
+//                            @Override
+//                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+//                                Log.i(TAG, loadAdError.getMessage());
+//                                mAdManagerInterstitialAd = null;
+//                            }
+//                        });
+//                break;
+//            case "ALIEN-V":
+//                AlienViewAds.Interstitial(activity, idIntertitialBackup);
+//                AlienViewAds.onLoadInterstitialView = new OnLoadInterstitialView() {
+//                    @Override
+//                    public void onInterstitialAdLoaded() {
+//                        if (onLoadInterstitialAlienView!=null){
+//                            onLoadInterstitialAlienView.onInterstitialAdLoaded();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onInterstitialAdClosed() {
+//                        if (onLoadInterstitialAlienView!=null){
+//                            onLoadInterstitialAlienView.onInterstitialAdClosed();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onInterstitialAdClicked() {
+//                        if (onLoadInterstitialAlienView!=null){
+//                            onLoadInterstitialAlienView.onInterstitialAdClicked();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onInterstitialAdFailedToLoad(String error) {
+//                        if (onLoadInterstitialAlienView!=null){
+//                            onLoadInterstitialAlienView.onInterstitialAdFailedToLoad();
+//                        }
+//                    }
+//                };
+//                break;
+//            case "ALIEN-M":
+//                AlienMediationAds.LoadInterstitial(activity, idIntertitialBackup);
+//                break;
+//
+//        }
+//    }
+
     public static void LoadIntertitialAlienView(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
         AlienViewAds.Interstitial(activity, idIntertitial);
         AlienViewAds.onLoadInterstitialView = new OnLoadInterstitialView() {
@@ -1139,11 +1253,7 @@ public class AndroAdsIntertitial {
                 interstitialAd.loadAd();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -1189,6 +1299,25 @@ public class AndroAdsIntertitial {
                         });
 
                 break;
+//            case "STARTAPP":
+//                startAppAd = new StartAppAd(activity);
+//                startAppAd.loadAd(new AdEventListener() {
+//                    @Override
+//                    public void onReceiveAd(Ad ad) {
+//                        if (onLoadInterstitialStartApp != null) {
+//                            onLoadInterstitialStartApp.onReceiveAd();
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailedToReceiveAd(Ad ad) {
+//                        if (onLoadInterstitialStartApp != null) {
+//                            onLoadInterstitialStartApp.onFailedToReceiveAd("");
+//                        }
+//                    }
+//                });
+//                break;
             case "ALIEN-M":
                 AlienMediationAds.LoadInterstitial(activity, idIntertitialBackup);
                 break;
@@ -1255,11 +1384,9 @@ public class AndroAdsIntertitial {
                 interstitialAd.loadAd();
                 break;
             case "ADMOB":
-//                Bundle extras = new FacebookExtras()
-//                        .setNativeBanner(true)
-//                        .build();
+
+
                 AdRequest request = new AdRequest.Builder()
-//                        .addNetworkExtrasBundle(FacebookAdapter.class, extras)
                         .build();
                 InterstitialAd.load(activity, idIntertitialBackup, request,
                         new InterstitialAdLoadCallback() {
@@ -1305,6 +1432,25 @@ public class AndroAdsIntertitial {
                         });
 
                 break;
+//            case "STARTAPP":
+//                startAppAd = new StartAppAd(activity);
+//                startAppAd.loadAd(new AdEventListener() {
+//                    @Override
+//                    public void onReceiveAd(Ad ad) {
+//                        if (onLoadInterstitialStartApp != null) {
+//                            onLoadInterstitialStartApp.onReceiveAd();
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailedToReceiveAd(Ad ad) {
+//                        if (onLoadInterstitialStartApp != null) {
+//                            onLoadInterstitialStartApp.onFailedToReceiveAd("");
+//                        }
+//                    }
+//                });
+//                break;
             case "ALIEN-V":
                 AlienViewAds.Interstitial(activity, idIntertitialBackup);
                 AlienViewAds.onLoadInterstitialView = new OnLoadInterstitialView() {
@@ -1392,7 +1538,7 @@ public class AndroAdsIntertitial {
                 if (onShowInterstitialAdmob != null) {
                     onShowInterstitialAdmob.onAdSuccess();
                 }
-               // LoadIntertitialAdmob(activity, selectAdsBackup, idIntertitial, idIntertitialBackup, Hpk1, Hpk2, Hpk3, Hpk4, Hpk5);
+                // LoadIntertitialAdmob(activity, selectAdsBackup, idIntertitial, idIntertitialBackup, Hpk1, Hpk2, Hpk3, Hpk4, Hpk5);
             } else {
                 if (onShowInterstitialAdmob != null) {
                     onShowInterstitialAdmob.onAdFailedShow();
@@ -1413,6 +1559,9 @@ public class AndroAdsIntertitial {
                     case "IRON":
                         IronSource.showInterstitial(idIntertitialBackup);
                         break;
+//                    case "STARTAPP":
+//                        StartAppAd.showAd(activity);
+//                        break;
                     case "APPLOVIN-D":
                         if (interstitialAdlovin != null) {
                             interstitialAdlovin.showAndRender(loadedAd);
@@ -1469,6 +1618,9 @@ public class AndroAdsIntertitial {
                     case "IRON":
                         IronSource.showInterstitial(idIntertitialBackup);
                         break;
+//                    case "STARTAPP":
+//                        StartAppAd.showAd(activity);
+//                        break;
                     case "APPLOVIN-D":
                         if (interstitialAdlovin != null) {
                             interstitialAdlovin.showAndRender(loadedAd);
@@ -1529,6 +1681,9 @@ public class AndroAdsIntertitial {
                             case "IRON":
                                 IronSource.showInterstitial(idIntertitialBackup);
                                 break;
+//                            case "STARTAPP":
+//                                StartAppAd.showAd(activity);
+//                                break;
                             case "ADMOB":
                                 if (mInterstitialAd != null) {
                                     mInterstitialAd.show(activity);
@@ -1599,6 +1754,9 @@ public class AndroAdsIntertitial {
                             case "IRON":
                                 IronSource.showInterstitial(idIntertitialBackup);
                                 break;
+//                            case "STARTAPP":
+//                                StartAppAd.showAd(activity);
+//                                break;
                             case "ADMOB":
                                 if (mInterstitialAd != null) {
                                     mInterstitialAd.show(activity);
@@ -1665,6 +1823,9 @@ public class AndroAdsIntertitial {
                     case "IRON":
                         IronSource.showInterstitial(idIntertitialBackup);
                         break;
+//                    case "STARTAPP":
+//                        StartAppAd.showAd(activity);
+//                        break;
                     case "ADMOB":
                         if (mInterstitialAd != null) {
                             mInterstitialAd.show(activity);
@@ -1721,6 +1882,9 @@ public class AndroAdsIntertitial {
                             interstitialAd.showAd();
                         }
                         break;
+//                    case "STARTAPP":
+//                        StartAppAd.showAd(activity);
+//                        break;
                     case "ADMOB":
                         if (mInterstitialAd != null) {
                             mInterstitialAd.show(activity);
@@ -1763,6 +1927,92 @@ public class AndroAdsIntertitial {
                                             int interval) {
 
     }
+
+
+//    public static void ShowIntertitialSartApp(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup,
+//                                              int interval) {
+//        if (counter >= interval) {
+//            startAppAd.showAd();
+//            startAppAd.showAd(new AdDisplayListener() {
+//                @Override
+//                public void adHidden(Ad ad) {
+//                    if (onShowInterstitialStartApp != null) {
+//                        onShowInterstitialStartApp.adHidden();
+//                    }
+//                }
+//
+//                @Override
+//                public void adDisplayed(Ad ad) {
+//                    if (onShowInterstitialStartApp != null) {
+//                        onShowInterstitialStartApp.adDisplayed();
+//                    }
+//                }
+//
+//                @Override
+//                public void adClicked(Ad ad) {
+//                    if (onShowInterstitialStartApp != null) {
+//                        onShowInterstitialStartApp.adClicked();
+//                    }
+//                }
+//
+//                @Override
+//                public void adNotDisplayed(Ad ad) {
+//                    if (onShowInterstitialStartApp != null) {
+//                        onShowInterstitialStartApp.adNotDisplayed();
+//                    }
+//                    switch (selectAdsBackup) {
+//                        case "APPLOVIN-D":
+//                            if (interstitialAdlovin != null) {
+//                                interstitialAdlovin.showAndRender(loadedAd);
+//                            }
+//                            break;
+//                        case "IRON":
+//                            IronSource.showInterstitial(idIntertitial);
+//                            break;
+//                        case "APPLOVIN-M":
+//                            if (interstitialAd.isReady()) {
+//                                interstitialAd.showAd();
+//                            }
+//                            break;
+//                        case "MOPUB":
+//                        case "UNITY":
+//
+//
+//                            break;
+//                        case "ADMOB":
+//                            if (mInterstitialAd != null) {
+//                                mInterstitialAd.show(activity);
+//                            }
+//                            break;
+//                        case "GOOGLE-ADS":
+//                            if (mAdManagerInterstitialAd != null) {
+//                                mAdManagerInterstitialAd.show(activity);
+//                            }
+//                            break;
+//                        case "FACEBOOK":
+//                            if (FBinterstitialAd == null || !FBinterstitialAd.isAdLoaded()) {
+//                            } else {
+//                                FBinterstitialAd.show();
+//                            }
+//                            break;
+//                        case "ALIEN-V":
+//                            SHOW_ALIEN_VIEW = true;
+//                            break;
+//                        case "ALIEN-M":
+//                            AlienMediationAds.ShowInterstitial(activity);
+//                            break;
+//                    }
+//                }
+//            });
+//
+//            LoadIntertitialStartApp(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
+//            counter = 0;
+//        } else {
+//            counter++;
+//        }
+//
+//    }
+
 
 //    public static void ShowIntertitialFAN(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup,
 //                                          int interval) {
@@ -1864,6 +2114,9 @@ public class AndroAdsIntertitial {
                         case "IRON":
                             IronSource.showInterstitial(idIntertitialBackup);
                             break;
+//                        case "STARTAPP":
+//                            StartAppAd.showAd(activity);
+//                            break;
                         case "APPLOVIN-D":
                             if (interstitialAdlovin != null) {
                                 interstitialAdlovin.showAndRender(loadedAd);
@@ -1930,6 +2183,9 @@ public class AndroAdsIntertitial {
                         case "IRON":
                             IronSource.showInterstitial(idIntertitialBackup);
                             break;
+//                        case "STARTAPP":
+//                            StartAppAd.showAd(activity);
+//                            break;
                         case "APPLOVIN-D":
                             if (interstitialAdlovin != null) {
                                 interstitialAdlovin.showAndRender(loadedAd);

@@ -139,9 +139,9 @@ public class AlienViewAds {
     }
 
     public static void RewardsAds (Activity activity, String AppID) {
-         rewardsView = new RewardsView(activity,AppID);
-         rewardsView.setStyle(1);
-         rewardsView.setOnRewardsAdListener(new OnLoadRewardsView() {
+        rewardsView = new RewardsView(activity,AppID);
+        rewardsView.setStyle(1);
+        rewardsView.setOnRewardsAdListener(new OnLoadRewardsView() {
             @Override
             public void onRewardsAdLoaded() {
                 if (onLoadRewardsView !=null){

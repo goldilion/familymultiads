@@ -16,6 +16,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class MyApplication extends Application {
     private static AndroAdsOpenAds alienOpenAds;
     private static InitializeAlienAds sdkads;
+    private static AndroAdsNotif notif;
+
     //Uranus
     @Override
     public void onCreate() {
@@ -43,7 +45,7 @@ public class MyApplication extends Application {
 
         sdkads = new InitializeAlienAds(this);
         alienOpenAds = new AndroAdsOpenAds(this);
-
+        notif = new AndroAdsNotif(this);
 
     }
 }
